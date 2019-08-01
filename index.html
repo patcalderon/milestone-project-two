@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Holiday Planner</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.2/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+</head>
+
+<body>
+    <header class="container-fluid navbar-section">
+        <nav class="navbar navbar-light bg-light nav">
+            <a id="nav-title" class="navbar-brand uppercase" href="#">
+                Holiday Planner
+            </a>
+        </nav>
+    </header>
+    <section class="container-fluid map-section">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 filter-column">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="section-heading uppercase">Filter</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 find-header">
+                        Country:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <select class="input-boxes" id="country">
+                          
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="findhotels" class="col-md-12 find-header">
+                        City:
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="locationField" class="col-md-12">
+                        <input id="autocomplete" class="input-boxes" placeholder="Enter a city" type="text" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="findhotels" class="col-md-12 find-header">
+                        Type:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 radio-form">
+                        <form action="">
+                            <input type="radio" name="gender" value="accomodation" id="accomodationRadio"> <span class="radio-buttons">Accomodation</span><br>
+                            <input type="radio" name="gender" value="Restaurants/Bars" id="foodRadio"> <span class="radio-buttons">Restaurants/Bars</span><br>
+                            <input type="radio" name="gender" value="Tourist Attractions" id="touristRadio"> <span class="radio-buttons">Tourist Attractions</span>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button id="reset-button" type="button" class="btn btn-primary" onclick="reset()">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="section-heading uppercase">Map</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="results-heading" class="section-heading uppercase"> </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="listing">
+                    <table id="resultsTable">
+                        <tbody id="results"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div style="display: none">
+            <div id="info-content">
+                <table>
+                    <tr id="iw-url-row" class="iw_table_row">
+                        <td id="iw-icon" class="iw_table_icon"></td>
+                        <td id="iw-url"></td>
+                    </tr>
+                    <tr id="iw-address-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Address:</td>
+                        <td id="iw-address"></td>
+                    </tr>
+                    <tr id="iw-phone-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Telephone:</td>
+                        <td id="iw-phone"></td>
+                    </tr>
+                    <tr id="iw-rating-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Rating:</td>
+                        <td id="iw-rating"></td>
+                    </tr>
+                    <tr id="iw-website-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Website:</td>
+                        <td id="iw-website"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="container-fluid">
+        <div id="footer-details" class="row">
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">About</h5>
+                <p class="inline-block">
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.3.1/jquery.min.js"></script>
+    <script src="assets/js/maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvC_t0H_5B7rboFdodoYnxT9zLEXmY4HQ&libraries=places&callback=initMap"></script>
+
+</body>
+
+</html>
