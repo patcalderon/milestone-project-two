@@ -4,19 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Holiday Planner</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.2/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Trip Tips</title>
 </head>
 
 <body>
     <header class="container-fluid navbar-section">
         <nav class="navbar navbar-light bg-light nav">
             <a id="nav-title" class="navbar-brand uppercase" href="#">
-                Holiday Planner
+                Trip Tips
             </a>
         </nav>
     </header>
@@ -36,7 +35,20 @@
                 <div class="row">
                     <div class="col-md-12">
                         <select class="input-boxes" id="country">
-                          
+                                <option value="all" selected>All</option>
+                                <option value="au">Australia</option>
+                                <option value="br">Brazil</option>
+                                <option value="ca">Canada</option>
+                                <option value="fr">France</option>
+                                <option value="de">Germany</option>
+                                <option value="mx">Mexico</option>
+                                <option value="nz">New Zealand</option>
+                                <option value="it">Italy</option>
+                                <option value="za">South Africa</option>
+                                <option value="es">Spain</option>
+                                <option value="pt">Portugal</option>
+                                <option value="us" >U.S.A.</option>
+                                <option value="uk">United Kingdom</option>
                         </select>
                     </div>
                 </div>
@@ -47,7 +59,7 @@
                 </div>
                 <div class="row">
                     <div id="locationField" class="col-md-12">
-                        <input id="autocomplete" class="input-boxes" placeholder="Enter a city" type="text" />
+                        <input id="autocomplete" class="input-boxes" placeholder="Search for city" type="text" />
                     </div>
                 </div>
                 <div class="row">
@@ -59,8 +71,8 @@
                     <div class="col-md-12 radio-form">
                         <form action="">
                             <input type="radio" name="gender" value="accomodation" id="accomodationRadio"> <span class="radio-buttons">Accomodation</span><br>
-                            <input type="radio" name="gender" value="Restaurants/Bars" id="foodRadio"> <span class="radio-buttons">Restaurants/Bars</span><br>
-                            <input type="radio" name="gender" value="Tourist Attractions" id="touristRadio"> <span class="radio-buttons">Tourist Attractions</span>
+                            <input type="radio" name="gender" value="Restaurants/Bars" id="foodRadio"> <span class="radio-buttons">Bars & Restaurants</span><br>
+                            <input type="radio" name="gender" value="Tourist Attractions" id="touristRadio"> <span class="radio-buttons">Attractions</span>
 
                         </form>
                     </div>
@@ -130,15 +142,16 @@
     <footer class="container-fluid">
         <div id="footer-details" class="row">
             <div class="col-sm-4">
-                <h5 class="uppercase general-sub">About</h5>
+                <h5 class="uppercase general-sub"></h5>
                 <p class="inline-block">
+                  
                 </p>
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/maps.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvC_t0H_5B7rboFdodoYnxT9zLEXmY4HQ&libraries=places&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvC_t0H_5B7rboFdodoYnxT9zLEXmY4HQ&libraries=places&callback=initMap" async defer></script>
 
 </body>
 
