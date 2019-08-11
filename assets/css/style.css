@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Mega:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 
-/*---------------------------------Main Margins*/
+
+/*-------Body margins-------*/
+
 
 body {
     background-color: #ffffff;
@@ -10,18 +12,20 @@ header {
     margin: 0;
 }
 
-/*---------------------------------Speacial Padding/margins/text*/
+
+/*-------Navigation bar-------*/
+
 
 .nav {
     margin-bottom: 0px;
-    background-color: #a8f2a2;
+    background-color: #60809f;
     color: #ffffff;
     border-bottom: 1px solid #345192;
     border-radius: 0;
 }
 
 #nav-title {
-    font-family: "Exo", "sans-serif";
+    font-family: "Lexend Mega", "sans-serif";
     color: #ffffff;
 }
 
@@ -29,7 +33,9 @@ header {
     padding: 0px;
 }
 
-/*---------------------------------Speacial Padding/margins/text*/
+
+/*-------Padding, margins and text-------*/
+
 
 h1,
 h2,
@@ -43,54 +49,15 @@ h4 {
 }
 
 
-/*---------------------------------Footer*/
+/*-------Footer-------*/
+
 
 footer {
-    background-color: #525252;
+    background-color: #60809f;
+    font-size: 16px;
     color: #fafafa;
     min-height: 120px;
     margin: 0;
-}
-
-footer .cv-pdf-a #cv-pdf {
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    padding-left: 5px;
-}
-
-footer .cv-pdf-a #cv-pdf:hover {
-    color: #e84610;
-    transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
-}
-
-footer .social-links {
-    padding-bottom: 15px;
-
-}
-
-footer .social-links li a i {
-    width: 32px;
-    height: 32px;
-    padding: 12px 0;
-    border-radius: 50%;
-    font-size: 13px;
-    line-height: 7px;
-    text-align: center;
-    color: white;
-    background-color: #8f8f8f;
-    margin-bottom: 5px;
-}
-
-footer .social-links li a i:hover {
-    background-color: #e84610;
-    transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
 }
 
 footer #footer-details {
@@ -98,18 +65,19 @@ footer #footer-details {
 }
 
 
+/*-------Section-------*/
 
-/*---------------------------------Section*/
 
 .section-heading {
-    font-family: "Exo", "sans-serif";
+    font-family: "Lexend Mega", "sans-serif";
     font-weight: 300;
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
 
-/*---------------------------------Media Queries*/
+/*-------Media Queries-------*/
+
 
 @media(min-width: 992px) {
     .section-column {
@@ -119,7 +87,8 @@ footer #footer-details {
 }
 
 
-/*---------------------------------Map/Filter*/
+/*-------Finder and Map-------*/
+
 
 .map-section {
     border-bottom: 1px solid #d0d0d0;
@@ -142,7 +111,7 @@ footer #footer-details {
 }
 
 .find-header {
-    font-family: "Exo", "sans-serif";
+    font-family: "Lexend Mega", "sans-serif";
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
@@ -170,11 +139,13 @@ footer #footer-details {
     margin-left: 10px;
     margin-bottom: 5px;
     padding: 5px;
-    font-family: "Roboto", "sans-serif";
-    font-size: 15px;
+    font-family: "Lexend Mega", "sans-serif";
+    font-size: 17px;
 }
 
-/*---------------------------------Results Table*/
+
+/*-------Results-------*/
+
 
 table {
     font-size: 15px;

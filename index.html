@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    
+    <!-- Navigation bar section -->
+    
     <header class="container-fluid navbar-section">
         <nav class="navbar navbar-light bg-light nav">
             <a id="nav-title" class="navbar-brand uppercase" href="#">
@@ -19,12 +22,15 @@
             </a>
         </nav>
     </header>
+    
+    <!-- Map and Finder section -->
+    
     <section class="container-fluid map-section">
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 filter-column">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="section-heading uppercase">Filter</h3>
+                        <h3 class="section-heading uppercase">Finder</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -35,24 +41,25 @@
                 <div class="row">
                     <div class="col-md-12">
                         <select class="input-boxes" id="country">
+                            
+                            <!-- Avaliable countries in the option list -->
+                            
                                 <option value="all" selected>All</option>
-                                <option value="au">Australia</option>
                                 <option value="br">Brazil</option>
-                                <option value="ca">Canada</option>
                                 <option value="fr">France</option>
-                                <option value="de">Germany</option>
                                 <option value="mx">Mexico</option>
-                                <option value="nz">New Zealand</option>
                                 <option value="it">Italy</option>
                                 <option value="za">South Africa</option>
                                 <option value="es">Spain</option>
-                                <option value="pt">Portugal</option>
-                                <option value="us" >U.S.A.</option>
+                                <option value="us" >United States</option>
                                 <option value="uk">United Kingdom</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
+                    
+                     <!-- Look for accommodation -->
+                     
                     <div id="findhotels" class="col-md-12 find-header">
                         City:
                     </div>
@@ -70,16 +77,18 @@
                 <div class="row">
                     <div class="col-md-12 radio-form">
                         <form action="">
-                            <input type="radio" name="gender" value="accomodation" id="accomodationRadio"> <span class="radio-buttons">Accomodation</span><br>
-                            <input type="radio" name="gender" value="Restaurants/Bars" id="foodRadio"> <span class="radio-buttons">Bars & Restaurants</span><br>
-                            <input type="radio" name="gender" value="Tourist Attractions" id="touristRadio"> <span class="radio-buttons">Attractions</span>
-
+                            <input type="radio" name="gender" value="accomodation" id="accomodationRadio"> <span class="radio-buttons">Accommodation</span><br>
+                            <input type="radio" name="gender" value="Tourist Attractions" id="touristRadio"> <span class="radio-buttons">Attractions</span><br>
+                            <input type="radio" name="gender" value="Restaurants/Bars" id="foodRadio"> <span class="radio-buttons">Bars & Restaurants</span>
                         </form>
                     </div>
                 </div>
                 <div class="row">
+                    
+                    <!-- Clears selected city and country -->
+                    
                     <div class="col-md-12 text-center">
-                        <button id="reset-button" type="button" class="btn btn-primary" onclick="reset()">Reset</button>
+                        <button id="reset-button" type="button" class="btn btn-primary" onclick="reset()">Clear</button>
                     </div>
                 </div>
             </div>
@@ -104,6 +113,9 @@
             </div>
         </div>
         <div class="row">
+            
+            <!-- List of results below the map -->
+            
             <div class="col-md-12">
                 <div id="listing">
                     <table id="resultsTable">
@@ -140,11 +152,20 @@
         </div>
     </section>
     <footer class="container-fluid">
+        
+        <!-- Footer section at the bottom om the web page -->
+        
         <div id="footer-details" class="row">
             <div class="col-sm-4">
                 <h5 class="uppercase general-sub"></h5>
                 <p class="inline-block">
-                  
+                  Step 1: Choose a country in the list
+                </p>
+                <p class="inline-block">
+                  Step 2: Type and search for a city in your selected country
+                </p>
+                <p class="inline-block">
+                  Step 3: Find the best results for hotels, restaurants and attractions!
                 </p>
             </div>
         </div>

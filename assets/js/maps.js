@@ -5,26 +5,18 @@ var countryRestrict = { 'country': [] };
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
 
-//List of properties for countries contain details about zoom, and their location on a map
+
+/*-------List of countries, map location and zoom-------*/
+
+
 var countries = {
- 'au': {
-  center: { lat: -25.3, lng: 133.8 },
-  zoom: 4
- },
+ 
  'br': {
   center: { lat: -14.2, lng: -51.9 },
   zoom: 3
  },
- 'ca': {
-  center: { lat: 62, lng: -110.0 },
-  zoom: 3
- },
  'fr': {
   center: { lat: 46.2, lng: 2.2 },
-  zoom: 5
- },
- 'de': {
-  center: { lat: 51.2, lng: 10.4 },
   zoom: 5
  },
  'mx': {
@@ -39,17 +31,9 @@ var countries = {
   center: { lat: 41.9, lng: 12.6 },
   zoom: 5
  },
- 'za': {
-  center: { lat: -30.6, lng: 22.9 },
-  zoom: 5
- },
  'es': {
   center: { lat: 40.5, lng: -3.7 },
   zoom: 5
- },
- 'pt': {
-  center: { lat: 39.4, lng: -8.2 },
-  zoom: 6
  },
  'us': {
   center: { lat: 37.1, lng: -95.7 },
@@ -61,7 +45,10 @@ var countries = {
  }
 };
 
-//Resets the map and all the input fields.
+
+/*-------Resets map and all input fields-------*/
+
+
 function reset() {
  clearResults();
  clearMarkers();
@@ -92,8 +79,10 @@ function reset() {
   content: document.getElementById('info-content')
  });
 
- // Create the autocomplete object and associate it with the UI input control.
- // Restrict the search to the default country, and to place type "cities".
+
+/*-------Creates the autocomplete object and associate it with UI input control. Restricts the search to default country-------*/
+ 
+ 
  autocomplete = new google.maps.places.Autocomplete(
   /** @type {!HTMLInputElement} */
   (
@@ -112,8 +101,10 @@ function reset() {
 
 }
 
-// When the user selects a city, get the place details for the city and
-// zoom the map in on the city.
+
+/*-------When a city is selected, it gets the details of the chosen option. Zooms in the map on the chosen city-------*/
+
+
 function onPlaceChanged() {
  if ($("#accomodationRadio").is(':checked')) {
   var place = autocomplete.getPlace();
@@ -151,7 +142,10 @@ function onPlaceChanged() {
 
 }
 
-// Search for hotels in the selected city, within the viewport of the map.
+
+/*-------Looks for hotels in the city selected, within the map viewport-------*/
+
+
 function searchHotel() {
  var search = {
   bounds: map.getBounds(),
@@ -163,19 +157,23 @@ function searchHotel() {
    clearResults();
    clearMarkers();
    document.getElementById('results-heading').innerHTML = "Results";
-   // Create a marker for each hotel found, and
-   // assign a letter of the alphabetic to each marker icon.
+   
+   /*-------Creates a marker for hotels found and assigns a letter to each marker in alphabetic order-------*/
+    
    for (var i = 0; i < results.length; i++) {
     var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
     var markerIcon = MARKER_PATH + markerLetter + '.png';
-    // Use marker animation to drop the icons incrementally on the map.
+    
+    /*-------Uses marker animation to drop the icons on the map-------*/
+    
     markers[i] = new google.maps.Marker({
      position: results[i].geometry.location,
      animation: google.maps.Animation.DROP,
      icon: markerIcon
     });
-    // If the user clicks a hotel marker, show the details of that hotel
-    // in an info window.
+    
+    /*-------If the user clicks on a hotel marker, show the details of that hotel in a window-------*/
+  
     markers[i].placeResult = results[i];
     google.maps.event.addListener(markers[i], 'click', showInfoWindow);
     setTimeout(dropMarker(i), i * 100);
@@ -185,7 +183,8 @@ function searchHotel() {
  });
 }
 
-// Search for restaurants in the selected city, within the viewport of the map.
+/*-------Search for restaurants in the selected city within the viewport of the map-------*/
+
 function searchRestaurant() {
  var search = {
   bounds: map.getBounds(),
@@ -197,7 +196,9 @@ function searchRestaurant() {
    clearResults();
    clearMarkers();
    document.getElementById('results-heading').innerHTML = "Results";
-   // Create a marker for each resteraunt found, and add letter.
+   
+   /*-------Create a marker for each restaurant found, and add letter-------*/
+   
    for (var i = 0; i < results.length; i++) {
     var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
     var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -207,8 +208,9 @@ function searchRestaurant() {
      animation: google.maps.Animation.DROP,
      icon: markerIcon
     });
-    // If the user clicks a resteraunt marker, show the details of that hotel
-    // in an info window.
+    
+    /*-------If the user clicks a resteraunt marker, show the details of that hotel in a window.-------*/
+    
     markers[i].placeResult = results[i];
     google.maps.event.addListener(markers[i], 'click', showInfoWindow);
     setTimeout(dropMarker(i), i * 100);
@@ -218,7 +220,8 @@ function searchRestaurant() {
  });
 }
 
-// Search for attractions in the selected city, within the viewport of the map.
+/*-------Search for attractions in the selected city within the map viewport-------*/
+
 function searchAttractions() {
  var search = {
   bounds: map.getBounds(),
@@ -230,19 +233,23 @@ function searchAttractions() {
    clearResults();
    clearMarkers();
    document.getElementById('results-heading').innerHTML = "Results";
-   // Create a marker for each attraction found, and
-   // assign a letter of the alphabetic to each marker icon.
+   
+   /*-------Creates a marker for attractions found and assigns a letter to each marker in alphabetic order-------*/
+   
    for (var i = 0; i < results.length; i++) {
     var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
     var markerIcon = MARKER_PATH + markerLetter + '.png';
-    // Use marker animation to drop the icons incrementally on the map.
+    
+    /*-------Uses marker animation to drop the icons on the map-------*/
+    
     markers[i] = new google.maps.Marker({
      position: results[i].geometry.location,
      animation: google.maps.Animation.DROP,
      icon: markerIcon
     });
-    // If the user clicks a attraction marker, show the details of that hotel
-    // in an info window.
+    
+    /*-------If the user clicks a attraction marker, show the details of that hotel in a window.-------*/
+    
     markers[i].placeResult = results[i];
     google.maps.event.addListener(markers[i], 'click', showInfoWindow);
     setTimeout(dropMarker(i), i * 100);
@@ -261,8 +268,8 @@ function clearMarkers() {
  markers = [];
 }
 
-// Set the country restriction based on user input.
-// Also center and zoom the map on the given country.
+/*-------Set the country restriction based on user input. Also zoom the map on the selected country.-------*/
+
 function setAutocompleteCountry() {
  var country = $('#country').val();
  if (country == 'all') {
@@ -285,14 +292,17 @@ function dropMarker(i) {
  };
 }
 
-//Adds found results to table below map in webpage
+/*-------Adds results to table below the map-------*/
+
 function addResult(result, i) {
  var results = document.getElementById('results');
  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
  var markerIcon = MARKER_PATH + markerLetter + '.png';
 
  var tr = document.createElement('tr');
- //Creates the striped effect you see By making every odd number darker
+ 
+ /*-------Creates stripe effect making every odd line darker-------*/
+
  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
  tr.onclick = function() {
   google.maps.event.trigger(markers[i], 'click');
@@ -319,8 +329,8 @@ function clearResults() {
  }
 }
 
-// Get the place details for a hotel,resteraunt,attraction. Show the information in an info window,
-// anchored on the marker for the hotel that the user selected.
+/*-------Get the details for selected hotel, restaurant or attraction. Display information in a window on the marker for the selected option-------*/
+
 function showInfoWindow() {
  var marker = this;
  places.getDetails({ placeId: marker.placeResult.place_id },
@@ -334,7 +344,7 @@ function showInfoWindow() {
   });
 }
 
-// Load the place information into the HTML elements used by the info window.
+/*-------Loads place information into the HTML elements used by the info window-------*/
 
 function buildIWContent(place) {
 
@@ -353,10 +363,8 @@ function buildIWContent(place) {
   document.getElementById('iw-phone-row').style.display = 'none';
  }
 
-
-
- // Assign a five-star rating to the place
- // to indicate the rating the place has earned, and a white star ('&#10025;')
+/*-------Assign a five-star rating to the place to indicate the rating of the selected place and a white star icons-------*/
+ 
  if (place.rating) {
   var ratingHtml = '';
   for (var i = 0; i < 5; i++) {
@@ -374,8 +382,6 @@ function buildIWContent(place) {
   document.getElementById('iw-rating-row').style.display = 'none';
  }
 
- // The regexp isolates the first part of the URL (domain plus subdomain)
- // to give a short URL for displaying in the info window.
  if (place.website) {
   var fullUrl = place.website;
   var website = hostnameRegexp.exec(place.website);
