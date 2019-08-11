@@ -1,10 +1,10 @@
-# Milestone Project Two: User-Centric Frontend Development - Code Institute
+# Milestone Project Two: Interactive Frontend Development - Code Institute
 
 ## Demo
 A live demo can be found at https://patcalderon.github.io/milestone-project-two/
 
 ## What is it?
-It's a website created using Interactive Frontend Development. I chose to build a website where you can plan your trips within some of my favourite countries that I've personally visited.
+It's a web application created using Interactive Frontend Development. I chose to build a website where you can plan your trips within some of my favourite countries that I've personally visited.
 
 ## UX
 My goal was to make the design appealing to the eye and easy to navigate through. Ideally to understand what the application does pretty much right away, and to ensure that I also added steps for how to use it on the bottom of the page. The colors I chose were colors that I feel would fit perfect for the kind of website I wanted to make. Matching different shades of blue through the whole page.
