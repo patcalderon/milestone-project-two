@@ -18,19 +18,19 @@ My goal was to make the design appealing to the eye and easy to navigate through
 * jQuery
 
 ## Features
-The navigation style I chose to use was a single page navigation. I didn't it necessary to have more than one page on my application. This allows for a userfriendly experience on this site. 
+The navigation style I chose to use was a single page navigation. I didn't find it necessary to have more than one page on my application. This allows for a userfriendly experience on this site. 
 
 ## Features Left to Implement
 In the future, I would like to add better UX to the section between the map and the footer. Probably hide the white space and make it appear in a hover type of way.
 
 ## Testing
-This site was tested mostly in DevTools in Google Chrome, but also across other browsers such as Chrome, Safari and Internet Explorer. The website was created on a design made by wireframe diagrams using Balsamiq and also Figma wich was used for better visual ideas. And also on mobile and tablet devices (iPhone 7 Plus, 8, iPad Pro with Safari) to ensure compatibility and responsiveness. When testing I realized that social media links at the bottom of the footer were placed too much to the left when viewed in a mobile. In that way I could see what the problem was and solved it with some help from DevTools.
+This site was tested mostly in DevTools in Google Chrome, but also across other browsers such as Chrome, Safari and Internet Explorer. The website was created on a design made by wireframe diagrams using Balsamiq and also Figma wich was used for better visual ideas. And also on mobile and tablet devices (iPhone 7 Plus, 8, iPad Pro with Safari) to ensure compatibility and responsiveness. When testing I realized that the map disappeared when viewed in a mobile. In that way I could see what the problem was and solved it with some help from DevTools.
 
 ## Deployment
 This site is hosted using GitHub pages, deployed directly from the master branch. The link to the demo is at the top, or you can deploy it here: https://patcalderon.github.io/milestone-project-two/
 
 ## Media
-The website uses of the Google Maps API to search for all different places displayed on the map. Google Images, that includes the background images from every section and also the ones used above the song listed on the Music section. And it is also where found the logo I used in the navbar. The songs are linked to Spotify and the video is from YouTube.
+The website uses of the Google Maps API to search for all different places on the map.
 
 ## Acknowledgements
 The website default look is inspired by: https://benhasselgren.github.io/ifd-milestone-project-pages/ I put my own twist to it using my own personal touch.
